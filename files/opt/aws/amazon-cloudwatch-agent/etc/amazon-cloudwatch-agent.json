@@ -1,0 +1,66 @@
+{
+	"agent": {
+		"metrics_collection_interval": 60,
+		"run_as_user": "root"
+	},
+	"logs": {
+		"logs_collected": {
+			"files": {
+				"collect_list": [
+					{
+						"file_path": "/var/log/tocloudwatch.log",
+						"log_group_name": "/foobar/awsvpn/var/log/tocloudwatch.log",
+						"log_stream_name": "{instance_id}",
+						"timezone": "UTC",
+						"timestamp_format" : "%Y-%m-%dT%H:%M:%S.%f"
+					}
+				]
+			}
+		},
+		"force_flush_interval" : 5
+	},
+	"metrics": {
+		"append_dimensions": {
+			"AutoScalingGroupName": "${aws:AutoScalingGroupName}",
+			"ImageId": "${aws:ImageId}",
+			"InstanceId": "${aws:InstanceId}",
+			"InstanceType": "${aws:InstanceType}"
+		},
+		"metrics_collected": {
+			"collectd": {
+				"collectd_security_level": "none",
+				"metrics_aggregation_interval": 60
+			},
+			"disk": {
+				"measurement": [
+					"used_percent",
+					"inodes_free"
+				],
+				"metrics_collection_interval": 60,
+				"resources": [
+					"*"
+				]
+			},
+			"diskio": {
+				"measurement": [
+					"io_time",
+					"write_bytes",
+					"read_bytes",
+					"writes",
+					"reads"
+				],
+				"metrics_collection_interval": 60,
+				"resources": [
+					"*"
+				]
+			},
+			"netstat": {
+				"measurement": [
+					"tcp_established",
+					"tcp_time_wait"
+				],
+				"metrics_collection_interval": 60
+			}
+		}
+	}
+}

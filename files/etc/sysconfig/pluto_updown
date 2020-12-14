@@ -1,0 +1,3 @@
+if [ -f "/etc/sysconfig/local-config" ]; then
+   source /etc/sysconfig/local-config
+fi

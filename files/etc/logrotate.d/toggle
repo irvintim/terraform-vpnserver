@@ -1,0 +1,4 @@
+/var/log/toggle.log
+{
+    missingok
+}

@@ -1,0 +1,3 @@
+add automation for DNS server IP addresses to /etc/ipsec.d/clients.conf
+
+add automation for jira/confluence hosts in /etc/hosts on vpn hosts

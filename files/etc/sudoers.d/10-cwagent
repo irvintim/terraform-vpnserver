@@ -1,0 +1,2 @@
+Cmnd_Alias      IPSECWHACK = /sbin/ipsec whack --globalstatus,/sbin/ipsec whack --clearstats
+cwagent   ALL = (root) NOPASSWD: IPSECWHACK

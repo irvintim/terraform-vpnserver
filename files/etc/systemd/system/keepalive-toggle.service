@@ -1,0 +1,10 @@
+[Unit]
+Description=Listener for keepalived toggle commands
+
+[Service]
+Type=simple
+PIDFile=/var/run/keepalive-toggle.pid
+ExecStart=/opt/keepalived/toggle.sh
+
+[Install]
+WantedBy=multi-user.target

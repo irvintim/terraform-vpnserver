@@ -1,0 +1,2 @@
+Hostname    "${keepalivedrole}"
+CollectInternalStats true
